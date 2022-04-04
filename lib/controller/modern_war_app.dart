@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import '../view/home_page.dart';
 
-import 'no_war_home_page.dart';
-
-class NoWarApp extends StatelessWidget {
-  const NoWarApp({Key? key}) : super(key: key);
+class ModernWarApp extends StatelessWidget {
+  const ModernWarApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
+  // it defines all the routes
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const NoWarHomePage(),
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => const HomePage(),
+      },
       title: 'Modern War History',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF3EBACE),
-        backgroundColor: const Color(0xFFF3F5F7),
+        backgroundColor: const Color.fromARGB(255, 119, 131, 143),
       ),
     );
   }

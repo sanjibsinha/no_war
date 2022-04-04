@@ -7,12 +7,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:no_war/view/no_war_app.dart';
+import 'package:no_war/controller/modern_war_app.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const NoWarApp());
+    await tester.pumpWidget(const ModernWarApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
