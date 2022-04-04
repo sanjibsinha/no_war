@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../controller/gesturedetector_controller.dart';
 import '../model/nineteen_hundred_wars.dart';
 import '../model/page_model.dart';
@@ -155,7 +154,7 @@ class _AboutAllWarsState extends State<AboutAllWars> {
                   headLine: '1900',
                   gestureWidget: AboutAllWars(),
                 ),
-                GestureDetectorController(
+                const GestureDetectorController(
                   headLine: 'Cyber War',
                   gestureWidget: CyberWarPage(),
                 ),

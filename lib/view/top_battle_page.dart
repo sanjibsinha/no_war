@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import '../model/nineteen_hundred_wars.dart';
-import '../model/weapon_used.dart';
-import '../view/weapons_page.dart';
+import 'about_all_wars.dart';
 
-class WeaponController extends StatelessWidget {
-  const WeaponController({Key? key}) : super(key: key);
+class TopBattlePage extends StatelessWidget {
+  const TopBattlePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class WeaponController extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Weapons Used',
+                'Top Battles',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Schuyler',
@@ -29,7 +28,7 @@ class WeaponController extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => WeaponsPage()),
+                    MaterialPageRoute(builder: (context) => AboutAllWars()),
                   );
                 },
                 child: Text(
@@ -53,7 +52,8 @@ class WeaponController extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: nineteenHundredWars.length,
             itemBuilder: (BuildContext context, int index) {
-              WeaponUsed weaponUsed = weapons[index];
+              NineteenHundredWars nineteenHundredWar =
+                  nineteenHundredWars[index];
               return Container(
                 margin: const EdgeInsets.all(10.00),
                 width: 200.00,
@@ -73,19 +73,20 @@ class WeaponController extends StatelessWidget {
                           padding: const EdgeInsets.all(12.0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                weaponUsed.name,
+                                '${nineteenHundredWar.weapons.length} weapons used.',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'Schuyler',
-                                  fontSize: 25.00,
-                                  letterSpacing: 1.0,
-                                  color: Colors.blue,
+                                  fontFamily: 'Trajan Pro',
+                                  fontSize: 18.00,
+                                  letterSpacing: 2.0,
+                                  color: Colors.black,
                                 ),
                               ),
                               Text(
-                                weaponUsed.type,
+                                nineteenHundredWar.summary,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Schuyler',
@@ -98,9 +99,6 @@ class WeaponController extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10.00,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -118,20 +116,63 @@ class WeaponController extends StatelessWidget {
                         children: <Widget>[
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20.00),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => WeaponsPage()),
-                                );
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.all(5.0),
-                                height: 200,
-                                width: 200,
-                                child: Image.network(weaponUsed.imageUrl),
-                              ),
+                            child: Container(
+                              padding: const EdgeInsets.all(5.0),
+                              height: 160,
+                              width: 160,
+                              child: Image.network(nineteenHundredWar.imageUrl),
+                            ),
+                          ),
+                          Positioned(
+                            left: 10.00,
+                            bottom: 10.00,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  nineteenHundredWar.name,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Schuyler',
+                                    fontSize: 25.00,
+                                    letterSpacing: 1.5,
+                                    backgroundColor: Colors.black,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10.00,
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '${nineteenHundredWar.centuries}',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Trajan Pro',
+                                        fontSize: 15.00,
+                                        letterSpacing: 1.0,
+                                        backgroundColor: Colors.black,
+                                        color: Colors.lightGreenAccent,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10.00,
+                                    ),
+                                    Text(
+                                      nineteenHundredWar.place,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Trajan Pro',
+                                        fontSize: 15.00,
+                                        letterSpacing: 1.0,
+                                        backgroundColor: Colors.black,
+                                        color: Colors.yellow,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ],

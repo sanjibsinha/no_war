@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../model/cyberwar_model.dart';
-import '../view/cyberwar_page.dart';
+import 'cyberwar_page.dart';
 
-class CyberController extends StatelessWidget {
-  const CyberController({Key? key}) : super(key: key);
+class CyberPage extends StatelessWidget {
+  const CyberPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

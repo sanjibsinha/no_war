@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import '../../model/seventeen_hundred_wars.dart';
-import 'seventeen_first.dart';
+import '../../model/eighteen_hundred_wars.dart';
+import 'eighteen_first.dart';
 
-class SeventeenHome extends StatefulWidget {
-  static const routeNname = '/seventen-home';
-  const SeventeenHome({Key? key}) : super(key: key);
+class EighteenHome extends StatefulWidget {
+  const EighteenHome({Key? key}) : super(key: key);
 
   @override
-  _SeventeenHomeState createState() => _SeventeenHomeState();
+  _EighteenHomeState createState() => _EighteenHomeState();
 }
 
-class _SeventeenHomeState extends State<SeventeenHome> {
-  List<SeventeenHundredWars> seventeenWars = [
-    seventeenHundredWars[0],
-    seventeenHundredWars[1],
-    seventeenHundredWars[2],
-    seventeenHundredWars[3],
-    seventeenHundredWars[4],
+class _EighteenHomeState extends State<EighteenHome> {
+  List<EighteenHundredWars> eighteenWars = [
+    eighteenHundredWars[0],
+    eighteenHundredWars[1],
+    eighteenHundredWars[2],
+    eighteenHundredWars[3],
+    eighteenHundredWars[4],
   ];
 
   @override
@@ -32,7 +31,7 @@ class _SeventeenHomeState extends State<SeventeenHome> {
               background: Container(
                 padding: const EdgeInsets.all(8.0),
                 child: Image.network(
-                    'https://cdn.pixabay.com/photo/2017/08/01/14/42/knight-2565957_960_720.jpg'),
+                    'https://cdn.pixabay.com/photo/2016/03/27/07/38/police-1282330_960_720.jpg'),
               ),
               stretchModes: const [
                 StretchMode.zoomBackground,
@@ -71,13 +70,13 @@ class _SeventeenHomeState extends State<SeventeenHome> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SeventeenFirst()),
+                              builder: (context) => const EighteenFirst()),
                         );
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          '1. ${seventeenWars[0].name}',
+                          '1. ${eighteenWars[0].name}',
                           style: TextStyle(
                               fontSize: 21.0,
                               fontWeight: FontWeight.bold,
@@ -93,7 +92,7 @@ class _SeventeenHomeState extends State<SeventeenHome> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '2. ${seventeenWars[1].name}',
+                        '2. ${eighteenWars[1].name}',
                         style: TextStyle(
                             fontSize: 21.0,
                             fontWeight: FontWeight.bold,
@@ -108,7 +107,7 @@ class _SeventeenHomeState extends State<SeventeenHome> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '3. ${seventeenWars[2].name}',
+                        '3. ${eighteenWars[2].name}',
                         style: TextStyle(
                             fontSize: 21.0,
                             fontWeight: FontWeight.bold,
@@ -123,7 +122,7 @@ class _SeventeenHomeState extends State<SeventeenHome> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '4. ${seventeenWars[3].name}',
+                        '4. ${eighteenWars[3].name}',
                         style: TextStyle(
                             fontSize: 21.0,
                             fontWeight: FontWeight.bold,
@@ -138,7 +137,7 @@ class _SeventeenHomeState extends State<SeventeenHome> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '5. ${seventeenWars[4].name}',
+                        '5. ${eighteenWars[4].name}',
                         style: TextStyle(
                             fontSize: 21.0,
                             fontWeight: FontWeight.bold,

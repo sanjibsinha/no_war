@@ -24,7 +24,7 @@ class GestureDetectorController extends StatelessWidget {
         width: 150.0,
         height: 50.0,
         alignment: Alignment.center,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(30.00)),
           boxShadow: [
             BoxShadow(
@@ -45,7 +45,7 @@ class GestureDetectorController extends StatelessWidget {
         child: Text(
           headLine,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 22.00,
             fontFamily: 'Trajan Pro',
             fontWeight: FontWeight.bold,

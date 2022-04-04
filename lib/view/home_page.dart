@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '../controller/cyber_controller.dart';
-import '../controller/exclusive_weapon_controller.dart';
-import '../controller/top_battle_controller.dart';
+import 'eighteen_wars/eighteen_home.dart';
+import 'seventeen_wars/seventeen_home.dart';
+import 'cyber_page.dart';
+import 'exclusive_weapon_page.dart';
+import 'top_battle_page.dart';
 import 'all_wars.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,10 +29,22 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           _selectedIndex = index;
         });
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const AllWars()),
-        );
+        if (_selectedIndex == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const SeventeenHome()),
+          );
+        } else if (_selectedIndex == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const EighteenHome()),
+          );
+        } /* else if (_selectedIndex == 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const NineteenHome()),
+          );
+        } */
       },
       child: Container(
         margin: const EdgeInsets.all(10.0),
@@ -114,52 +128,18 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 20.00,
             ),
-            const TopBattleController(),
+            const TopBattlePage(),
             const SizedBox(
               height: 20.00,
             ),
-            const WeaponController(),
+            const ExclusiveWeaponPage(),
             const SizedBox(
               height: 20.00,
             ),
-            const CyberController(),
+            const CyberPage(),
           ],
         ),
       ),
     );
   }
 }
-
-/**
- * bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentTab,
-        onTap: (int value) {
-          setState(() {
-            _currentTab = value;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: CircleAvatar(
-              radius: 15.00,
-              backgroundColor: Colors.lightBlueAccent,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              size: 30.00,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.location_searching,
-              size: 30.00,
-            ),
-            label: '',
-          ),
-        ],
-      ),
- */
