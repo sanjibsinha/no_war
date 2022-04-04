@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../controller/cyber_controller.dart';
 import '../controller/exclusive_weapon_controller.dart';
 import '../controller/top_battle_controller.dart';
-import '../view/about_all_wars.dart';
-
 import 'all_wars.dart';
 
 class HomePage extends StatefulWidget {

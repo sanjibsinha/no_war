@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'controller/modern_war_app.dart';
+import 'view/no_war_app.dart';
 
 void main() {
-  runApp(const ModernWarApp());
+  runApp(const NoWarApp());
 }
