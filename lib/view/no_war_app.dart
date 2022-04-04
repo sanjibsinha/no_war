@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:no_war/view/seventeen_wars/seventeen_home.dart';
 import 'home_page.dart';
 
 class NoWarApp extends StatelessWidget {
@@ -15,8 +16,9 @@ class NoWarApp extends StatelessWidget {
         primaryColor: const Color(0xFF3EBACE),
         backgroundColor: const Color.fromARGB(255, 119, 131, 143),
       ),
-      routes: <String, WidgetBuilder>{
+      routes: {
         '/': (context) => const HomePage(),
+        SeventeenHome.routeNname: (context) => const SeventeenHome(),
       },
     );
   }

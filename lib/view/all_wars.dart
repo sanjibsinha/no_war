@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../controller/gesturedetector_controller.dart';
 import '../model/nineteen_hundred_wars.dart';
 import '../view/seventeen_wars/seventeen_home.dart';
 
 import 'about_all_wars.dart';
 import 'cyberwar_page.dart';
+import '../controller/gesturedetector_controller.dart';
 
 class AllWars extends StatelessWidget {
   const AllWars({Key? key}) : super(key: key);
@@ -13,12 +13,12 @@ class AllWars extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[
-        SliverAppBar(
+        const SliverAppBar(
           backgroundColor: Colors.white,
           stretch: true,
           expandedHeight: 350.0,
-          flexibleSpace: FlexibleSpaceBar(
-            background: Image(
+          flexibleSpace: const FlexibleSpaceBar(
+            background: const Image(
               fit: BoxFit.cover,
               image: AssetImage('images/1.jpg'),
             ),
@@ -75,7 +75,7 @@ class AllWars extends StatelessWidget {
                         headLine: '1900',
                         gestureWidget: AboutAllWars(),
                       ),
-                      GestureDetectorController(
+                      const GestureDetectorController(
                         headLine: 'Cyber War',
                         gestureWidget: CyberWarPage(),
                       ),
@@ -116,7 +116,7 @@ class AllWars extends StatelessWidget {
                                 children: <Widget>[
                                   Text(
                                     '${nineteenHundredWar.weapons.length} weapons used.',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontFamily: 'Trajan Pro',
                                       fontSize: 18.00,
@@ -126,7 +126,7 @@ class AllWars extends StatelessWidget {
                                   ),
                                   Text(
                                     nineteenHundredWar.summary,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontFamily: 'Schuyler',
                                       fontSize: 15.00,
@@ -143,7 +143,7 @@ class AllWars extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(30.00),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 color: Colors.black12,
                                 offset: Offset(1.00, 2.00),
@@ -171,7 +171,7 @@ class AllWars extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                       nineteenHundredWar.name,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Schuyler',
                                         fontSize: 25.00,
@@ -180,14 +180,14 @@ class AllWars extends StatelessWidget {
                                         color: Colors.green,
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10.00,
                                     ),
                                     Row(
                                       children: <Widget>[
                                         Text(
                                           '${nineteenHundredWar.centuries}',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontFamily: 'Trajan Pro',
                                             fontSize: 15.00,
@@ -196,12 +196,12 @@ class AllWars extends StatelessWidget {
                                             color: Colors.lightGreenAccent,
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10.00,
                                         ),
                                         Text(
                                           nineteenHundredWar.place,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontFamily: 'Trajan Pro',
                                             fontSize: 15.00,

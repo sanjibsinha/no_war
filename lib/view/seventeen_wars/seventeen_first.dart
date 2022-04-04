@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../model/seventeen_hundred_wars.dart';
-import '../../model/weapon_used.dart';
-import '../home_page.dart';
 import 'seventeen_second.dart';
-import 'seventeen_home.dart';
 
 class SeventeenFirst extends StatefulWidget {
   const SeventeenFirst({Key? key}) : super(key: key);
@@ -13,8 +10,6 @@ class SeventeenFirst extends StatefulWidget {
 }
 
 class _SeventeenFirstState extends State<SeventeenFirst> {
-  int _currentTab = 0;
-
   List<SeventeenHundredWars> seventeenWars = [
     seventeenHundredWars[0],
     seventeenHundredWars[1],
@@ -33,11 +28,12 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
             stretch: true,
             expandedHeight: 450.0,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image(
-                fit: BoxFit.cover,
-                image: AssetImage('images/11.jpg'),
+              background: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.network(
+                    'https://cdn.pixabay.com/photo/2018/09/22/20/17/spartan-3696073_960_720.jpg'),
               ),
-              stretchModes: [
+              stretchModes: const [
                 StretchMode.zoomBackground,
               ],
             ),
@@ -74,7 +70,7 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
                           left: 8.0, top: 2.0, right: 5.0, bottom: 10.0),
                       child: Text(
                         seventeenWars[0].description,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             wordSpacing: 2.5,
@@ -93,11 +89,11 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: Text(
+                            child: const Text(
                               'Home',
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 200.0,
                           ),
                           GestureDetector(
@@ -108,7 +104,7 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
                                     builder: (context) => SeventeenSecond()),
                               );
                             },
-                            child: Text(
+                            child: const Text(
                               'Next',
                             ),
                           ),
