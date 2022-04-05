@@ -13,16 +13,17 @@ class AllWars extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[
-        const SliverAppBar(
+        SliverAppBar(
           backgroundColor: Colors.white,
           stretch: true,
           expandedHeight: 350.0,
-          flexibleSpace: const FlexibleSpaceBar(
-            background: const Image(
-              fit: BoxFit.cover,
-              image: AssetImage('images/1.jpg'),
+          flexibleSpace: FlexibleSpaceBar(
+            background: Container(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.network(
+                  'https://cdn.pixabay.com/photo/2017/11/08/12/04/war-2930223_960_720.jpg'),
             ),
-            stretchModes: [
+            stretchModes: const [
               StretchMode.zoomBackground,
             ],
           ),
@@ -58,7 +59,7 @@ class AllWars extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      GestureDetectorController(
+                      const GestureDetectorController(
                         headLine: '1700',
                         gestureWidget: SeventeenHome(),
                       ),
@@ -72,7 +73,7 @@ class AllWars extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       GestureDetectorController(
-                        headLine: '1900',
+                        headLine: 'About Major Wars',
                         gestureWidget: AboutAllWars(),
                       ),
                       const GestureDetectorController(
